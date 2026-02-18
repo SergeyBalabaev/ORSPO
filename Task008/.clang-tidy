@@ -1,0 +1,18 @@
+Checks: >
+  clang-diagnostic-*,
+  bugprone-*,
+  cppcoreguidelines-avoid-magic-numbers,
+  readability-magic-numbers
+HeaderFilterRegex: "main\\.c"
+WarningsAsErrors: false
+FormatStyle: none
+
+CheckOptions:
+  - key: readability-magic-numbers.IgnoredValues
+    value: "0;1;-1"     # не ругается на нормальные константы
+  - key: readability-magic-numbers.IgnoreMacros
+    value: "true"        # не ругается на макросы
+  - key: readability-magic-numbers.IgnoreEnumValues
+    value: "true"
+  - key: readability-magic-numbers.IgnoredFloatingPointValues
+    value: "0.0;1.0"
