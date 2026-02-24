@@ -1,9 +1,5 @@
 #include <stdio.h>
-
-int sum(int a, int b)
-{
-  // Enter your code
-}
+#include "max.h"
 
 int main(void)
 {
@@ -12,9 +8,9 @@ int main(void)
   printf("Enter two numbers: ");
   scanf("%d %d", &a, &b);
 
-  int result = sum(a, b);
+  int result = max(a, b);
 
-  printf("Sum: %d\n", result);
+  printf("Max: %d\n", result);
 
   return 0;
 }
