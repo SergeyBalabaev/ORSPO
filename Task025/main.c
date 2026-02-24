@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-int divide(int numerator, int denominator)
+??? divide(??? numerator, ??? denominator)
 {
-  // Enter your code
+  return ///;
 }
 
 int main(void)
 {
-  int a, b;
+  ??? a, b;
   printf("Enter numerator and denominator: ");
-  scanf("%d %d", &a, &b);
+  scanf("%??? %???", &a, &b);
 
-  int result = divide(a, b);
-  printf("Result: %d\n", result);
+  ??? result = divide(a, b);
+  printf("Result: %???\n", result);
 
   return 0;
 }

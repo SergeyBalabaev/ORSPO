@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int solve_quadratic(double a, double b, double c)
+int solve_quadratic(double a, double b, double c, double *x1, double *x2)
 {
   // Enter your code
 }

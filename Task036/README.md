@@ -12,12 +12,5 @@
 ### Прототип функции
 
 ```c
-int solve_quadratic(double a, double b, double c);
-```
-
-### Запуск тестирования
-Для проверки работы функции выполнить команду:
-
-```bash
-make test
+int solve_quadratic(double a, double b, double c, double *x1, double *x2);
 ```
