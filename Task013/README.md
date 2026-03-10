@@ -1,106 +1,46 @@
-# Task013 — CMake: работа с несколькими файлами и директориями 🔍
+# Task013 — Переменные в Makefile 🔍
 
+## Что такое переменные в Makefile?
+
+Переменные позволяют хранить значения (имена компилятора, флаги, имена файлов) и использовать их многократно. Это делает Makefile более гибким и удобным для поддержки.
+
+```makefile
+CC = gcc
+CFLAGS = -Wall -O2
 ```
-project/
-├── CMakeLists.txt
-├── main.c
-├── lib/
-│   ├── CMakeLists.txt
-│   ├── lib.c
-│   └── lib.h
-└── build/
-```
----
-## Разбор CMakeLists.txt
 
-### Корневой CMakeLists.txt
+где:
 
-| Строка | Что делает|
-| :--- | :--- | 
-| `add_subdirectory(lib)` | Подключает `CMakeLists.txt` из папки `lib` для сборки библиотеки |
-| `add_executable(myapp main.c)` | Создает исполняемый файл `myapp` из `main.c` |
-| `target_link_libraries(myapp mylib)` |Линкует программу с библиотекой `mylib` |
-| `target_include_directories(myapp PRIVATE lib)` | Добавляет папку `lib` в пути поиска заголовочных файлов для `myapp` |
+* **`=`** — Присваивание с отложенным вычислением
 
-### lib/CMakeLists.txt
+* **`:=`** — Присваивание с немедленным вычислением
 
-| Строка | Что делает|
-| :--- | :--- | 
-| `add_library(mylib STATIC lib.c)` | Создает статическую библиотеку `mylib` из `lib.c` |
-| `target_include_directories(mylib PUBLIC ...)` | Указывает, что при использовании `mylib` нужно добавить текущую папку в пути поиска заголовков |
-
-**Важно:** `PUBLIC` означает, что папка с заголовками нужна не только при сборке самой библиотеки, но и для тех, кто её использует.
-
+* **`$(VAR)`** — Использование значения переменной
 ---
 
-## Сборка проекта
+## Простой Makefile с переменными
 
-```bash
-# Создание директории для сборки
-mkdir build
-cd build
+```makefile
+CC := gcc
+CFLAGS := -Wall -Wextra
 
-# Генерация файлов сборки
-cmake ..
+all: clean
+	$(CC) -c $(CFLAGS) *.c
+	$(CC) *.o -o main
 
-# Сборка проекта
-cmake --build .
-
-# Запуск программы
-./myapp
+clean:
+	rm -f *.o
 ```
-
----
-
-## Дополнительные возможности
-
-### Добавление разных типов сборки
-
-```cmake
-cmake -DCMAKE_BUILD_TYPE=Release ..
-cmake -DCMAKE_BUILD_TYPE=Debug ..
-```
-
-### Установка флагов компиляции
-
-```cmake
-set(CMAKE_C_FLAGS "-Wall -Wpedantic -Werror")
-```
-
-### Или для конкретной цели
-
-```cmake
-target_compile_options(myapp PRIVATE -Wall -Wpedantic -Werror)
-```
-
-### Добавление нескольких исходных файлов
-
-```cmake
-set(SOURCES main.c utils.c math.c)
-add_executable(myapp ${SOURCES})
-```
-
-### Поиск библиотек в системе
-
-```cmake
-find_library(MATH_LIB m)
-target_link_libraries(myapp ${MATH_LIB})
-```
-
 ---
 
 ## Задание 
 
-* Выполните сборку проекта через `CMake`.
+* Запустите `make`. Убедитесь, что программа собралась.
 
-* Запустите программу и убедитесь, что она работает.
+* Создайте в директории пустой файл с именем `clean`.
 
-* Измените тип библиотеки с `STATIC` на `SHARED` в `lib/CMakeLists.txt` и пересоберите проект.
+* Снова запустите `make clean`. Что произошло? Почему команда не сработала?
 
-* Выполните ldd myapp и посмотрите на зависимости.
+* Удалите файл `clean` и запустите `make clean` ещё раз.
 
-* Зачем разделять проект на несколько `CMakeLists.txt`?
-
-* В чем разница между `PRIVATE`, `PUBLIC` и `INTERFACE` в `CMake`?
-
-* Что произойдет, если не указать `target_include_directories` для `myapp`?
+* Объясните, почему так происходит и как это связано с работой `make`.

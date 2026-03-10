@@ -1,11 +1,6 @@
 #include <stdio.h>
-#include "lib.h"
 
-#define X 5
-
-int main()
-{
-    printf("Sum = %d\n", summ(X, 5));
-    printf("Mult = %d\n", mult(5, 5));
+int main() {
+    printf("Hello, Makefile with variables!\n");
     return 0;
 }

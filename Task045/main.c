@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-int main(void)
+int main()
 {
-  int rows, cols;
-
-  // Enter your code
-
-  return 0;
+	int x[3] = {1,2,3};
+	printf("%d\n",x[1]);
+	printf("%d\n",*(x+1));
+	printf("%d\n",1[x]);
+	printf("%d\n",*(&x[1]));
+	return 0;
 }

@@ -1,39 +1,83 @@
 #include <stdio.h>
-#include "malloc_lib.h" 
+#include <stdlib.h>
 
-void test1();
-void test2();
+// Структура узла BST
+typedef struct Node {
+    int key;
+    struct Node* left;
+    struct Node* right;
+} Node;
 
-int main()
-{
-	test1();
-	test2();
-	return 0;
+// Создание нового узла
+Node* create_node(int key) {
+///
 }
 
-void test1()
-{
-	int* a = (int*)malloc(10);
-	int* b = (int*)malloc(15);
-	int* c = (int*)malloc(10);
-	free(b);
-	int* d = (int*)malloc(5);
-	int* e = (int*)malloc(5);
-	free(a);
-	free(c);
-	free(d);
-	free(e);
+// Вставка элемента в BST
+Node* insert(Node* root, int key) {
+///
 }
 
-void test2()
-{
-	int N_mas = 10;
-	double** A = (double**)malloc(N_mas * sizeof(double*));
-	for (int i = 0; i < N_mas; i++) {
-		A[i] = (double*)malloc(N_mas * sizeof(double));
-	}
-	for (int i = 0; i < N_mas; i++) {
-		free(A[i]);
-	}
-	free(A);
+// Поиск элемента
+Node* search(Node* root, int key) {
+///
+}
+
+// Поиск минимального значения в дереве
+Node* find_min(Node* root) {
+////
+}
+
+// Удаление элемента
+Node* delete(Node* root, int key) {
+////
+}
+
+// Обход дерева (inorder)
+void inorder(Node* root) {
+///
+}
+
+// Пример использования
+int main() {
+    Node* root = NULL;
+
+    root = insert(root, 50);
+    root = insert(root, 30);
+    root = insert(root, 20);
+    root = insert(root, 40);
+    root = insert(root, 70);
+    root = insert(root, 60);
+    root = insert(root, 80);
+
+    printf("Inorder traversal: ");
+    inorder(root);
+    printf("\n");
+
+    printf("Delete 20\n");
+    root = delete(root, 20);
+    printf("Inorder traversal: ");
+    inorder(root);
+    printf("\n");
+
+    printf("Delete 30\n");
+    root = delete(root, 30);
+    printf("Inorder traversal: ");
+    inorder(root);
+    printf("\n");
+
+    printf("Delete 50\n");
+    root = delete(root, 50);
+    printf("Inorder traversal: ");
+    inorder(root);
+    printf("\n");
+
+    int key = 60;
+    Node* found = search(root, key);
+    if (found)
+        printf("Key %d found in the tree\n", key);
+    else
+        printf("Key %d not found\n", key);
+
+    return 0;
 }

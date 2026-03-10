@@ -1,12 +1,15 @@
 #include <stdio.h>
-#include <string.h>
 
-int main(void)
-{
-  int n;
-  scanf("%d", &n);
+int main() {
+    int a[5] = {10,20,30,40,50};
+    int *p = a;
 
-  // Enter your code
+    printf("%d\n", *p);
+    printf("%d\n", *(p + 1));
+    printf("%d\n", *(p + 2));
 
-  return 0;
+    p = p + 3;
+    printf("%d\n", *p);
+
+    return 0;
 }

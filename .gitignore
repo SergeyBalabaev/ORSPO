@@ -1,4 +1,4 @@
 *.docx
 *.xlsx
 build
-ans_*
+ans*

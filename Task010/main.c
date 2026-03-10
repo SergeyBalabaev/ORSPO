@@ -1,6 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    printf("Hello, Makefile with variables!\n");
+#ifdef _WIN64
+    printf("Running on Windows!\n");
+#else
+    printf("Running on Linux/Unix!\n");
+#endif
     return 0;
 }
