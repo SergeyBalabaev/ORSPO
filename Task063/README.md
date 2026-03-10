@@ -1,4 +1,4 @@
-# Task063 - strcmp
+# Task063 - strcmp 3️⃣
 
 ## В чем проблема
 

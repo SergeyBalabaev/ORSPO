@@ -1,4 +1,4 @@
-# Task065 - strstr
+# Task065 - strstr 3️⃣
 
 ## В чем проблема
 

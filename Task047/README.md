@@ -1,4 +1,4 @@
-# Task047 - The Ksplice Pointer Challenge
+# Task047 - The Ksplice Pointer Challenge 🔍
 
 ## Задание
 

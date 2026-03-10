@@ -1,4 +1,4 @@
-# Task088 - typeof
+# Task088 - typeof 4️⃣
 
 ## Теория
 

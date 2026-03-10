@@ -1,4 +1,4 @@
-# Task066 — strtok 4️⃣
+# Task066 — strtok 3️⃣
 
 ## В чем проблема
 

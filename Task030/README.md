@@ -1,4 +1,4 @@
-# Task030: FizzBuzz 3️⃣
+# Task030 - FizzBuzz 3️⃣
 
 ### Задание
 
