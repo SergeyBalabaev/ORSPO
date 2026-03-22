@@ -1,6 +1,7 @@
-CFLAGS=-Wall -Wpedantic -Werror
-all: clean
-    gcc -c *.c
-    gcc *.o $(CFLAGS) -o main
+.PHONY: clean all
+
+main: clean
+	gcc -c *.c
+	gcc *.o -o $@
 clean:
-    rm -f *.o
+	rm -f *.o
