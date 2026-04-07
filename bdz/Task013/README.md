@@ -33,6 +33,28 @@ clean:
 ```
 ---
 
+##  Усложним Makefile
+
+Можем выделить сборку библиотеки как отдельную цель
+
+```makefile
+FLAGS=-Wall -Wpedantic -Werror
+CC=gcc
+
+main: clear lib
+	$(CC) $(FLAGS) -c main.c -o main.o
+	$(CC) lib.o main.o -o $@
+
+lib:
+	$(CC) $(FLAGS) -c lib.c -o lib.o
+
+clear:
+	rm -rf *.o
+
+.PHONY: lib clear main
+```
+---
+
 ## Задание 
 
 * Запустите `make`. Убедитесь, что программа собралась.
