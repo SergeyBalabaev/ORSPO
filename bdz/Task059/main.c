@@ -1,44 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "tree.h"
 
-// Структура узла BST
-typedef struct Node {
-    int key;
-    struct Node* left;
-    struct Node* right;
-} Node;
 
-// Создание нового узла
-Node* create_node(int key) {
-///
-}
-
-// Вставка элемента в BST
-Node* insert(Node* root, int key) {
-///
-}
-
-// Поиск элемента
-Node* search(Node* root, int key) {
-///
-}
-
-// Поиск минимального значения в дереве
-Node* find_min(Node* root) {
-////
-}
-
-// Удаление элемента
-Node* delete(Node* root, int key) {
-////
-}
-
-// Обход дерева (inorder)
-void inorder(Node* root) {
-///
-}
-
-// Пример использования
 int main() {
     Node* root = NULL;
 
